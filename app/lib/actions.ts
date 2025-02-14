@@ -102,6 +102,15 @@ export async function createCustomer(prevState: CustomerState, formData: FormDat
     redirect('/dashboard/customers');
 }
 
+export async function deleteCustomer(id: string) {
+    try {
+        await sql`DELETE FROM customers WHERE id = ${id}`;
+    } catch (error) {
+        console.log(error)
+    }
+    revalidatePath('/dashboard/customers');
+}
+
 export async function createInvoice(prevState: InvoiceState, formData: FormData) {
     const validatedFields = CreateInvoice.safeParse({
         customerId: formData.get('customerId'),
@@ -117,7 +126,7 @@ export async function createInvoice(prevState: InvoiceState, formData: FormData)
     }
 
     const { customerId, amount, status } = validatedFields.data;
-    const amountInCents = amount * 100;
+    const amountInCents = Number((amount * 100).toFixed(0));
     const date = new Date().toISOString().split('T')[0];
 
     try {

@@ -3,7 +3,7 @@ import Search from '@/app/ui/search';
 import {
   FormattedCustomersTable,
 } from '@/app/lib/definitions';
-import { CreateCustomer } from './buttons';
+import { CreateCustomer, DeleteCustomer } from './buttons';
 
 export default async function CustomersTable({
   customers,
@@ -79,6 +79,9 @@ export default async function CustomersTable({
                     <th scope="col" className="px-4 py-5 font-medium">
                       Total Paid
                     </th>
+                    <th scope="col" className="relative py-3 pl-6 pr-3">
+                      <span className="sr-only">Edit</span>
+                    </th>
                   </tr>
                 </thead>
 
@@ -106,8 +109,13 @@ export default async function CustomersTable({
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
                         {customer.total_pending}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
                         {customer.total_paid}
+                      </td>
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                        <div className="flex justify-end gap-3">
+                          <DeleteCustomer id={customer.id} totalInvoices={customer.total_invoices} />
+                        </div>
                       </td>
                     </tr>
                   ))}
