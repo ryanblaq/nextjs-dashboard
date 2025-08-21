@@ -20,7 +20,7 @@ export default async function Page(props: {
 
   return (
     <div className="w-full">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between dark:bg-slate-7900 dark:text-slate-100">
         <h1 className={`${lusitana.className} text-2xl`}>Invoices</h1>
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">

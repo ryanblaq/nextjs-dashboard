@@ -15,7 +15,7 @@ export default async function Page(props: {
     const filteredCustomers = await fetchFilteredCustomers(query);
   return (
     <div className="w-full">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between dark:bg-slate-800 dark:text-slate-100">
         <h1 className={`${lusitana.className} text-2xl`}>Customers</h1>
       </div>
       {<Suspense fallback={<CustomersTableSkeleton />}>

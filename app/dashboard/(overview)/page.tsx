@@ -8,7 +8,7 @@ import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/a
 export default async function Page() {
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl dark:text-slate-100`}>
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
