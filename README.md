@@ -8,5 +8,7 @@ This version is heavily modified beyond the course requirements. I've added a fu
 
 
 https://nextjs-dashboard-ryanblaquiere-livecoms-projects.vercel.app/
+
 UserName: user@nextmail.com
+
 Password: 123456
